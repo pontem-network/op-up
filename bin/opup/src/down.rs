@@ -41,7 +41,6 @@ impl DownCommand {
 
             tracing::info!(target: "cli", "Stack: {:#?}", _stack);
 
-            // Get the current timestamp.
             let genesis_timestamp = format!(
                 "{}",
                 std::time::SystemTime::now()

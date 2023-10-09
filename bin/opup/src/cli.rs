@@ -1,3 +1,4 @@
+use crate::clean::CleanCommand;
 use clap::{ArgAction, Parser, Subcommand};
 use eyre::Result;
 
@@ -27,7 +28,7 @@ pub enum Command {
     /// Nuke the devnet stack
     Nuke,
     /// Clean all stack artifacts
-    Clean,
+    Clean(CleanCommand),
 }
 
 pub fn run() -> Result<()> {
@@ -45,7 +46,7 @@ pub fn run() -> Result<()> {
             Command::Up(up_command) => up_command.run()?,
             Command::Down(down_command) => down_command.run()?,
             Command::Nuke => unimplemented!("nuke command not yet implemented"),
-            Command::Clean => unimplemented!("clean command not yet implemented"),
+            Command::Clean(clean_command) => clean_command.run()?,
         },
     }
 
