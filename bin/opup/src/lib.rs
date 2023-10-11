@@ -12,3 +12,9 @@ pub mod runner;
 
 /// The Up subcommand module that contains the logic for bringing up the stack.
 pub mod up;
+
+/// The Down subcommand module that contains the logic for bringing down the stack.
+pub mod down;
+
+/// The Clean subcommand module that contains the logic for cleaning the stack.
+pub mod clean;
